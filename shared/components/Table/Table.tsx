@@ -16,8 +16,8 @@ export default function Table({ headerBase }: TProps) {
   }, []);
 
   return (
-    <div>
+    <table>
       <HeaderTable header={header} />
-    </div>
+    </table>
   );
 }

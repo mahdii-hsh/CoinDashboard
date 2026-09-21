@@ -5,19 +5,16 @@ type TProps = {
 };
 export default function HeaderTable({ header }: TProps) {
   return (
-    <div className="flex">
+    <tr>
       {header?.length !== 0 &&
         header?.map(
           (item) =>
             item.view && (
-              <div
-                key={item.id}
-                className={`flex ${item.size ? "flex-" + item.size : ""}`}
-              >
+              <th key={item.id} colSpan={item.size}>
                 {item.title}
-              </div>
+              </th>
             ),
         )}
-    </div>
+    </tr>
   );
 }
