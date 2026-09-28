@@ -15,7 +15,7 @@ type TProps = {
 export default function BodyTable({ coins, header }: TProps) {
   return coins.map((item, coinIndex) => (
     <tbody>
-      <tr key={item.id}>
+      <tr key={item.id} className="hover:bg-slate-100 h-20">
         {header.map((cell) => (
           <td className="" key={cell.title}>
             {cell.title === "name" ? (

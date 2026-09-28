@@ -18,13 +18,13 @@ export default function HeaderTable({ header }: TProps) {
         )}
       </colgroup>
       <thead>
-        <tr>
+        <tr className="border-y border-slate-200 ">
           {header?.length !== 0 &&
             header?.map(
               (item) =>
                 item.view && (
                   <th key={item.title}>
-                    <div className="w-full flex justify-start items-center p-2">
+                    <div className="w-full flex justify-start items-center h-12">
                       {item.symbol}
                     </div>
                   </th>

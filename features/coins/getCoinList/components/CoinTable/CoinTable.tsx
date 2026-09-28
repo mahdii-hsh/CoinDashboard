@@ -60,7 +60,7 @@ export default function CoinTable({ headerBase }: TProps) {
   }, []);
 
   return (
-    <table className="w-full table-fixed">
+    <table className="w-full table-fixed mt-4 ">
       <HeaderTable header={header} />
       <BodyTable coins={coins} header={header} />
     </table>
