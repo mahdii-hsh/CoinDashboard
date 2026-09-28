@@ -1,6 +1,15 @@
 type THeaderItem = {
   id: number;
-  title: "name" | "high_24h" ;
+  title:
+    | "name"
+    | "high_24h"
+    | "id"
+    | "current_price"
+    | "price_change_percentage_1h_in_currency"
+    | "price_change_percentage_24h_in_currency"
+    | "price_change_percentage_7d_in_currency"
+    | "market_cap"
+    | "total_volume";
   size?: number;
   view: boolean;
 };
