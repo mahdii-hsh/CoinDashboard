@@ -13,6 +13,7 @@ function useHeader() {
           symbol: item.headerItemSymbol
             ? item.headerItemSymbol
             : item.headerItemTitle,
+          render: item.headerItemRenderCell,
           title: item.headerItemTitle,
           view: item.headerItemView,
           size: item.headerItemSize,

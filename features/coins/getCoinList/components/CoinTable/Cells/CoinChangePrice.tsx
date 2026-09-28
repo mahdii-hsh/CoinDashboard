@@ -4,7 +4,7 @@ type CoinChangePrice1hProps = {
   value: number;
 };
 
-export default function CoinChangePrice1h({
+export default function CoinChangePrice({
   value,
 }: CoinChangePrice1hProps) {
   const isPositive = value >= 0;

@@ -1,3 +1,5 @@
+import { TCoinItem } from "@/entities/coin";
+
 type THeaderItem = {
   title:
     | "name"
@@ -12,6 +14,7 @@ type THeaderItem = {
   symbol: string;
   size?: number;
   view: boolean;
+  render: (...args: any) => React.ReactElement;
 };
 
 export type THeader = THeaderItem[];
@@ -21,6 +24,7 @@ type THeaderBaseItem = {
   headerItemTitle: THeaderItem["title"];
   headerItemSize?: THeaderItem["size"];
   headerItemView: THeaderItem["view"];
+  headerItemRenderCell: THeaderItem["render"];
 };
 
 export type THeaderBase = THeaderBaseItem[];
