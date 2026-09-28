@@ -14,36 +14,38 @@ type TProps = {
 
 export default function BodyTable({ coins, header }: TProps) {
   return coins.map((item, coinIndex) => (
-    <tr key={item.id}>
-      {header.map((cell) => (
-        <td key={cell.title}>
-          {cell.title === "name" ? (
-            <CoinName
-              name={item["name"]}
-              image={item["image"]}
-              symbol={item["symbol"]}
-            />
-          ) : cell.title === "high_24h" ? (
-            <CoinHigh24 />
-          ) : cell.title === "id" ? (
-            <CoinID id={coinIndex} />
-          ) : cell.title === "current_price" ? (
-            <CoinCurrPrice price={item[cell.title]} />
-          ) : cell.title === "price_change_percentage_1h_in_currency" ? (
-            <CoinChangePrice1h value={item[cell.title]} />
-          ) : cell.title === "price_change_percentage_24h_in_currency" ? (
-            <CoinChangePrice1h value={item[cell.title]} />
-          ) : cell.title === "price_change_percentage_7d_in_currency" ? (
-            <CoinChangePrice1h value={item[cell.title]} />
-          ) : cell.title === "market_cap" ? (
-            <CoinCurrPrice price={item[cell.title]} />
-          ) : cell.title === "total_volume" ? (
-            <CoinCurrPrice price={item[cell.title]} />
-          ) : (
-            <></>
-          )}
-        </td>
-      ))}
-    </tr>
+    <tbody>
+      <tr key={item.id}>
+        {header.map((cell) => (
+          <td className="" key={cell.title}>
+            {cell.title === "name" ? (
+              <CoinName
+                name={item["name"]}
+                image={item["image"]}
+                symbol={item["symbol"]}
+              />
+            ) : cell.title === "high_24h" ? (
+              <CoinHigh24 />
+            ) : cell.title === "id" ? (
+              <CoinID id={coinIndex} />
+            ) : cell.title === "current_price" ? (
+              <CoinCurrPrice price={item[cell.title]} />
+            ) : cell.title === "price_change_percentage_1h_in_currency" ? (
+              <CoinChangePrice1h value={item[cell.title]} />
+            ) : cell.title === "price_change_percentage_24h_in_currency" ? (
+              <CoinChangePrice1h value={item[cell.title]} />
+            ) : cell.title === "price_change_percentage_7d_in_currency" ? (
+              <CoinChangePrice1h value={item[cell.title]} />
+            ) : cell.title === "market_cap" ? (
+              <CoinCurrPrice price={item[cell.title]} />
+            ) : cell.title === "total_volume" ? (
+              <CoinCurrPrice price={item[cell.title]} />
+            ) : (
+              <></>
+            )}
+          </td>
+        ))}
+      </tr>
+    </tbody>
   ));
 }

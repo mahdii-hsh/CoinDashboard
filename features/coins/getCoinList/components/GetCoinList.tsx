@@ -4,7 +4,6 @@ import CoinTable from "./CoinTable/CoinTable";
 export default function GetCoinList() {
   return (
     <div>
-      GetCoinList
       <CoinTable
         headerBase={[
           {
@@ -16,13 +15,13 @@ export default function GetCoinList() {
             headerItemTitle: "name",
             headerItemSymbol: "Coin",
             headerItemView: true,
-            headerItemSize: 1,
+            headerItemSize: 20,
           },
           {
             headerItemTitle: "current_price",
             headerItemSymbol: "Price",
             headerItemView: true,
-            headerItemSize: 1,
+            headerItemSize: 10,
           },
           {
             headerItemTitle: "price_change_percentage_1h_in_currency",

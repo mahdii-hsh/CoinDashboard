@@ -5,16 +5,33 @@ type TProps = {
 };
 export default function HeaderTable({ header }: TProps) {
   return (
-    <tr>
-      {header?.length !== 0 &&
-        header?.map(
+    <>
+      <colgroup>
+        {header.map(
           (item) =>
             item.view && (
-              <th key={item.title} colSpan={item.size}>
-                {item.symbol}
-              </th>
+              <col
+                key={item.title}
+                style={{ width: `${item.size ? `${item.size}%` : ""}` }}
+              />
             ),
         )}
-    </tr>
+      </colgroup>
+      <thead>
+        <tr>
+          {header?.length !== 0 &&
+            header?.map(
+              (item) =>
+                item.view && (
+                  <th key={item.title}>
+                    <div className="w-full flex justify-start items-center p-2">
+                      {item.symbol}
+                    </div>
+                  </th>
+                ),
+            )}
+        </tr>
+      </thead>
+    </>
   );
 }
