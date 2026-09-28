@@ -1,6 +1,6 @@
 type THeaderItem = {
   id: number;
-  title: string;
+  title: "name" | "high_24h" ;
   size?: number;
   view: boolean;
 };
@@ -14,4 +14,3 @@ type THeaderBaseItem = {
 };
 
 export type THeaderBase = THeaderBaseItem[];
-

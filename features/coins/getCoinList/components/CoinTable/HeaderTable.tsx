@@ -1,4 +1,4 @@
-import { THeader } from "../types/headerTypes";
+import { THeader } from "../../types/headerTypes";
 
 type TProps = {
   header: THeader;
