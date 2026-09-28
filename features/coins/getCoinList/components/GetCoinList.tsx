@@ -7,31 +7,50 @@ export default function GetCoinList() {
       GetCoinList
       <CoinTable
         headerBase={[
-          { headerItemTitle: "id", headerItemView: true },
-          { headerItemTitle: "name", headerItemView: true, headerItemSize: 1 },
+          {
+            headerItemTitle: "id",
+            headerItemSymbol: "#",
+            headerItemView: true,
+          },
+          {
+            headerItemTitle: "name",
+            headerItemSymbol: "Coin",
+            headerItemView: true,
+            headerItemSize: 1,
+          },
           {
             headerItemTitle: "current_price",
+            headerItemSymbol: "Price",
             headerItemView: true,
             headerItemSize: 1,
           },
           {
             headerItemTitle: "price_change_percentage_1h_in_currency",
+            headerItemSymbol: "1h",
+
             headerItemView: true,
           },
           {
             headerItemTitle: "price_change_percentage_24h_in_currency",
+            headerItemSymbol: "24h",
+
             headerItemView: true,
           },
           {
             headerItemTitle: "price_change_percentage_7d_in_currency",
+            headerItemSymbol: "7d",
+
             headerItemView: true,
           },
           {
             headerItemTitle: "market_cap",
+            headerItemSymbol: "Market Cap",
+
             headerItemView: true,
           },
           {
             headerItemTitle: "total_volume",
+            headerItemSymbol: "Total Volume",
             headerItemView: true,
           },
         ]}

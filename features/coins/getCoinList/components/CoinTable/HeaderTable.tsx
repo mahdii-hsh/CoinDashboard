@@ -10,8 +10,8 @@ export default function HeaderTable({ header }: TProps) {
         header?.map(
           (item) =>
             item.view && (
-              <th key={item.id} colSpan={item.size}>
-                {item.title}
+              <th key={item.title} colSpan={item.size}>
+                {item.symbol}
               </th>
             ),
         )}

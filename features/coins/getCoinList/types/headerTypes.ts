@@ -1,5 +1,4 @@
 type THeaderItem = {
-  id: number;
   title:
     | "name"
     | "high_24h"
@@ -10,6 +9,7 @@ type THeaderItem = {
     | "price_change_percentage_7d_in_currency"
     | "market_cap"
     | "total_volume";
+  symbol: string;
   size?: number;
   view: boolean;
 };
@@ -17,6 +17,7 @@ type THeaderItem = {
 export type THeader = THeaderItem[];
 
 type THeaderBaseItem = {
+  headerItemSymbol?: THeaderItem["symbol"];
   headerItemTitle: THeaderItem["title"];
   headerItemSize?: THeaderItem["size"];
   headerItemView: THeaderItem["view"];

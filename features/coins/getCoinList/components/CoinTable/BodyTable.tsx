@@ -16,7 +16,7 @@ export default function BodyTable({ coins, header }: TProps) {
   return coins.map((item, coinIndex) => (
     <tr key={item.id}>
       {header.map((cell) => (
-        <td key={cell.id}>
+        <td key={cell.title}>
           {cell.title === "name" ? (
             <CoinName
               name={item["name"]}

@@ -10,6 +10,9 @@ function useHeader() {
       base.map((item, index) => {
         return {
           id: index,
+          symbol: item.headerItemSymbol
+            ? item.headerItemSymbol
+            : item.headerItemTitle,
           title: item.headerItemTitle,
           view: item.headerItemView,
           size: item.headerItemSize,
