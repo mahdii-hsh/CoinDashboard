@@ -1,16 +1,15 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { THeader, THeaderBase } from "../../types/headerTypes";
 import { useHeader } from "../../hooks/useHeader";
 import HeaderTable from "./HeaderTable";
 import BodyTable from "./BodyTable";
-import { TCoins } from "@/entities/coin";
+import { TCoins, THeaderBase } from "@/entities/coin";
 
 type TProps = {
   headerBase: THeaderBase;
 };
-const coins : TCoins = [
+const coins: TCoins = [
   {
     id: "bitcoin",
     symbol: "btc",

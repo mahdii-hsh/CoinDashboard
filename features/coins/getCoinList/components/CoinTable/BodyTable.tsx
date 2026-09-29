@@ -1,6 +1,6 @@
 import { TCoins } from "@/entities/coin";
 import React from "react";
-import { THeader } from "../../types/headerTypes";
+import { THeader } from "../../../../../entities/coin/model/types/headerTypes";
 import CoinName from "./Cells/CoinInfo";
 import CoinHigh24 from "./Cells/CoinHigh24";
 import CoinID from "./Cells/CoinID";

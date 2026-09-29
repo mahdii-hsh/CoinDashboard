@@ -1,5 +1,5 @@
+import { THeader, THeaderBase } from "@/entities/coin";
 import { useState } from "react";
-import { THeader, THeaderBase } from "../types/headerTypes";
 
 function useHeader() {
   const [header, setHeader] = useState<THeader | any[]>([]);

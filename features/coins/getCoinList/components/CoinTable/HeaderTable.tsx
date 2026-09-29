@@ -1,4 +1,4 @@
-import { THeader } from "../../types/headerTypes";
+import { THeader } from "@/entities/coin";
 
 type TProps = {
   header: THeader;
