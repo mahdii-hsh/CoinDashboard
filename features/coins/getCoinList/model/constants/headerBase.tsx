@@ -29,40 +29,40 @@ const headerBase: THeaderBase = [
       <CoinCurrPrice price={coin.current_price} />
     ),
   },
-  {
-    headerItemTitle: "price_change_percentage_1h_in_currency",
-    headerItemSymbol: "1h",
+  // {
+  //   headerItemTitle: "price_change_percentage_1h_in_currency",
+  //   headerItemSymbol: "1h",
 
-    headerItemView: true,
-    headerItemRenderCell: (coin: TCoinItem) => (
-      <CoinChangePrice value={coin.price_change_percentage_1h_in_currency} />
-    ),
-  },
+  //   headerItemView: true,
+  //   headerItemRenderCell: (coin: TCoinItem) => (
+  //     <CoinChangePrice value={coin.price_change_percentage_1h_in_currency} />
+  //   ),
+  // },
   {
     headerItemTitle: "price_change_percentage_24h_in_currency",
     headerItemSymbol: "24h",
 
     headerItemView: true,
     headerItemRenderCell: (coin: TCoinItem) => (
-      <CoinChangePrice value={coin.price_change_percentage_24h_in_currency} />
+      <CoinChangePrice value={coin.price_change_percentage_24h} />
     ),
   },
-  {
-    headerItemTitle: "price_change_percentage_7d_in_currency",
-    headerItemSymbol: "7d",
+  // {
+  //   headerItemTitle: "price_change_percentage_7d_in_currency",
+  //   headerItemSymbol: "7d",
 
-    headerItemView: true,
-    headerItemRenderCell: (coin: TCoinItem) => (
-      <CoinChangePrice value={coin.price_change_percentage_7d_in_currency} />
-    ),
-  },
+  //   headerItemView: true,
+  //   headerItemRenderCell: (coin: TCoinItem) => (
+  //     <CoinChangePrice value={coin.price_change_percentage_7d_in_currency} />
+  //   ),
+  // },
   {
     headerItemTitle: "market_cap",
     headerItemSymbol: "Market Cap",
 
     headerItemView: true,
     headerItemRenderCell: (coin: TCoinItem) => (
-      <CoinChangePrice value={coin.market_cap} />
+      <CoinCurrPrice price={coin.market_cap} />
     ),
   },
   {
@@ -70,7 +70,7 @@ const headerBase: THeaderBase = [
     headerItemSymbol: "Total Volume",
     headerItemView: true,
     headerItemRenderCell: (coin: TCoinItem) => (
-      <CoinChangePrice value={coin.total_volume} />
+      <CoinCurrPrice price={coin.total_volume} />
     ),
   },
 ];

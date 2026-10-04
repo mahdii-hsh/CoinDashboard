@@ -1,4 +1,4 @@
-import GetCoinList from "@/features/coins/getCoinList";
+import GetCoinList from "@/features/coins";
 
 
 export default function page() {
