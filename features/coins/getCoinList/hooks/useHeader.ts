@@ -22,9 +22,21 @@ function useHeader() {
     );
   };
 
+  const toggleView = (title: THeader[number]["title"]) => {
+    setHeader((prev) =>
+      prev.map((headItem: THeader[number]) => {
+        if (headItem.title === title) {
+          return { ...headItem, view: !headItem.view };
+        }
+        return headItem;
+      }),
+    );
+  };
+
   return {
     header: header,
     initHeader: (base: THeaderBase) => initialHeader(base),
+    toggleView: toggleView,
   };
 }
 
