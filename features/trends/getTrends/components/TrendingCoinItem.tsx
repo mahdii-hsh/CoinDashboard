@@ -1,18 +1,14 @@
 import Image from "next/image";
 
-
 import { TrendingChange } from "./TrendingChange";
 import { TTrends } from "@/entities/trending";
 
 type Props = {
-  coin: TTrends["coins"][number];
+  coin: TTrends["coins"][number]["item"];
   rank: number;
 };
 
-export function TrendingCoinItem({
-  coin,
-  rank,
-}: Props) {
+export function TrendingCoinItem({ coin, rank }: Props) {
   return (
     <div
       className="
@@ -22,9 +18,7 @@ export function TrendingCoinItem({
         hover:bg-black/[0.03]
       "
     >
-      <span className="w-4 text-xs text-muted-foreground">
-        {rank}
-      </span>
+      <span className="w-4 text-xs text-muted-foreground">{rank}</span>
 
       <Image
         src={coin.small}
@@ -35,23 +29,17 @@ export function TrendingCoinItem({
       />
 
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-medium">
-          {coin.name}
-        </p>
+        <p className="truncate text-sm font-medium">{coin.name}</p>
 
-        <p className="text-xs uppercase text-muted-foreground">
-          {coin.symbol}
-        </p>
+        <p className="text-xs uppercase text-muted-foreground">{coin.symbol}</p>
       </div>
 
       <div className="text-right">
-        <p className="text-sm font-medium">
-          ${coin.data.price}
-        </p>
+        <p>${coin.data?.price ?? "N/A"}</p>
+        <span className="flex justify-end">
+        <TrendingChange value={coin.data?.price_change_percentage_24h?.usd} />
 
-        <TrendingChange
-          value={coin.data.price_change_percentage_24h.usd}
-        />
+        </span>
       </div>
     </div>
   );

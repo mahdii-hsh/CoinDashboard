@@ -35,15 +35,17 @@ export function TrendingNFTItem({ nft, rank }: Props) {
         </p>
       </div>
 
-      <div className="text-right">
+      <div className="text-start">
         <p className="text-sm font-medium">
           {nft.floor_price_in_native_currency}{" "}
           {nft.native_currency_symbol.toUpperCase()}
         </p>
-
+        <span className="flex justify-end">
         <TrendingChange
           value={nft.floor_price_24h_percentage_change}
         />
+
+        </span>
       </div>
     </div>
   );

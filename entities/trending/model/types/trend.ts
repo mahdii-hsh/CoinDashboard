@@ -66,7 +66,9 @@ export type TTrendingCategory = {
 };
 
 export type TTrends = {
-  coins: TTrendingCoin[];
+  coins: {
+    item: TTrendingCoin;
+  }[];
 
   nfts: TTrendingNFT[];
 
