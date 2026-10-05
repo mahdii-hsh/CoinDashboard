@@ -1,4 +1,4 @@
-import GetCoinList from "@/features/coins";
+import {GetCoinList} from "@/features/coins";
 import { Navbar } from "./Navbar";
 import Trending from "@/features/trends";
 
