@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 
-import { TrendingChange } from "./TrendingChange";
 import { TTrends } from "@/entities/trending";
+import { TrendingChange } from "../TrendingChange";
 
 type Props = {
   nft: TTrends["nfts"][number];

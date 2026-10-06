@@ -1,7 +1,8 @@
 import Image from "next/image";
 
-import { TrendingChange } from "./TrendingChange";
+import { TrendingChange } from "../TrendingChange";
 import { TTrends } from "@/entities/trending";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Props = {
   coin: TTrends["coins"][number]["item"];
@@ -19,7 +20,6 @@ export function TrendingCoinItem({ coin, rank }: Props) {
       "
     >
       <span className="w-4 text-xs text-muted-foreground">{rank}</span>
-
       <Image
         src={coin.small}
         alt={coin.name}
@@ -37,8 +37,7 @@ export function TrendingCoinItem({ coin, rank }: Props) {
       <div className="text-right">
         <p>${coin.data?.price ?? "N/A"}</p>
         <span className="flex justify-end">
-        <TrendingChange value={coin.data?.price_change_percentage_24h?.usd} />
-
+          <TrendingChange value={coin.data?.price_change_percentage_24h?.usd} />
         </span>
       </div>
     </div>

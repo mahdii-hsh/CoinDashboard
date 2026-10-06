@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { TrendingChange } from "./TrendingChange";
+import { TrendingChange } from "../TrendingChange";
 import { TTrends } from "@/entities/trending";
 
 type Props = {

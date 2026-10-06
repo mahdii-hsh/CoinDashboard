@@ -17,14 +17,13 @@ export default function Trending() {
     <section className="space-y-5">
       <TrendingHeader />
 
-      {isLoading && <p>isloading</p>}
-      {isSuccess && (
-        <TrendingGrid
-          coins={data?.coins}
-          nfts={data?.nfts}
-          categories={data?.categories}
-        />
-      )}
+      {/* {isLoading && <p>isloading</p>} */}
+      <TrendingGrid
+        isLoading={isLoading}
+        coins={data?.coins}
+        nfts={data?.nfts}
+        categories={data?.categories}
+      />
     </section>
   );
 }
