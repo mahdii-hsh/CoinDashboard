@@ -57,11 +57,11 @@ export default function CoinTable({ headerBase }: TProps) {
       </div>
       <Table>
         <HeaderTable header={header} />
-        {isLoading ? (
-          <p>isloding</p>
-        ) : (
-          <BodyTable coins={filteredCoins} header={header} />
-        )}
+        <BodyTable
+          isLoading={isLoading}
+          coins={filteredCoins}
+          header={header}
+        />
       </Table>
     </>
   );
