@@ -11,7 +11,7 @@ export default function CoinInfo({ image, name, symbol, coinID }: TProps) {
   return (
     <Link
       href={`/coin/${coinID}`}
-      className="flex items-center py-2 justify-start gap-x-1"
+      className="flex items-center justify-start gap-x-1"
     >
       <img src={image} alt={name} className="size-8 rounded-full" />
 

@@ -1,3 +1,4 @@
+import { TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { TCoins, THeader } from "@/entities/coin";
 
 type TProps = {
@@ -7,15 +8,17 @@ type TProps = {
 
 export default function BodyTable({ coins, header }: TProps) {
   return coins.map((item, coinIndex) => (
-    <tbody>
-      <tr key={item.id} className="hover:bg-slate-100 h-20">
+    <TableBody>
+      <TableRow key={item.id}>
         {header.map(
           (cell) =>
             cell.view && (
-              <td key={cell.title}>{cell.render(item, coinIndex)}</td>
+              <TableCell key={cell.title}>
+                {cell.render(item, coinIndex)}
+              </TableCell>
             ),
         )}
-      </tr>
-    </tbody>
+      </TableRow>
+    </TableBody>
   ));
 }

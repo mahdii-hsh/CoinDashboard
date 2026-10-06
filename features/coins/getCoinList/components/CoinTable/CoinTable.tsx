@@ -10,6 +10,7 @@ import { coinQueryOption } from "../../api/queries";
 import HeaderVisibility from "./HeaderVisibility";
 import { useCoinFilter } from "../../hooks/useCoinFilter";
 import CoinFilterBox from "./CoinFilterBox";
+import { Table } from "@/components/ui/table";
 
 type TProps = {
   headerBase: THeaderBase;
@@ -54,14 +55,14 @@ export default function CoinTable({ headerBase }: TProps) {
         </div>
         <HeaderVisibility header={header} onToggle={toggleView} />
       </div>
-      <table className="w-full table-fixed mt-4 ">
+      <Table>
         <HeaderTable header={header} />
         {isLoading ? (
           <p>isloding</p>
         ) : (
           <BodyTable coins={filteredCoins} header={header} />
         )}
-      </table>
+      </Table>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import {GetCoinList} from "@/features/coins";
+import { GetCoinList } from "@/features/coins";
 import { Navbar } from "./Navbar";
 import Trending from "@/features/trends";
 
@@ -7,9 +7,10 @@ export default function page() {
     <div>
       <Navbar />
       <div className="mb-16"></div>
-
-      <Trending />
-      <GetCoinList />
+      <div className="w-full  px-24">
+        <Trending />
+        <GetCoinList />
+      </div>
     </div>
   );
 }

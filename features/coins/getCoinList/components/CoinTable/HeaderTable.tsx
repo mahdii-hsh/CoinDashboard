@@ -1,3 +1,4 @@
+import { TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { THeader } from "@/entities/coin";
 
 type TProps = {
@@ -6,7 +7,7 @@ type TProps = {
 export default function HeaderTable({ header }: TProps) {
   return (
     <>
-      <colgroup>
+      {/* <colgroup>
         {header.map(
           (item) =>
             item.view && (
@@ -16,22 +17,22 @@ export default function HeaderTable({ header }: TProps) {
               />
             ),
         )}
-      </colgroup>
-      <thead>
-        <tr className="border-y border-slate-200 ">
+      </colgroup> */}
+      <TableHeader>
+        <TableRow>
           {header?.length !== 0 &&
             header?.map(
               (item) =>
                 item.view && (
-                  <th key={item.title}>
-                    <div className="w-full flex justify-start items-center h-12">
+                  <TableHead key={item.title}>
+                    <div>
                       {item.symbol}
                     </div>
-                  </th>
+                  </TableHead>
                 ),
             )}
-        </tr>
-      </thead>
+        </TableRow>
+      </TableHeader>
     </>
   );
 }

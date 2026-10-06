@@ -45,7 +45,7 @@ export default function CoinFilterBox({ value, onChange, onReset }: Props) {
 
   return (
     <Popover>
-      <PopoverTrigger >
+      <PopoverTrigger>
         <Button variant="outline" className="gap-2">
           <Filter size={16} />
           Filter

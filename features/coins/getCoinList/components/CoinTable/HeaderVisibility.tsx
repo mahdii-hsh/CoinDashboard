@@ -19,7 +19,7 @@ type Props = {
 export default function HeaderVisibility({ header, onToggle }: Props) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger>
         <button type="button" className="rounded-md border p-2 hover:bg-muted">
           <Settings2 size={18} />
         </button>
