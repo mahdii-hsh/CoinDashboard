@@ -17,7 +17,12 @@ const headerBase: THeaderBase = [
     headerItemView: true,
     headerItemSize: 20,
     headerItemRenderCell: (coin: TCoinItem) => (
-      <CoinInfo image={coin.image} name={coin.name} symbol={coin.symbol} />
+      <CoinInfo
+        image={coin.image}
+        name={coin.name}
+        symbol={coin.symbol}
+        coinID={coin.id}
+      />
     ),
   },
   {

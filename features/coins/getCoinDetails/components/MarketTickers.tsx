@@ -52,7 +52,7 @@ export function MarketTickers({ tickers }: Props) {
                 </TableCell>
 
                 <TableCell>
-                  {ticker.bid_ask_spread_percentage.toFixed(3)}%
+                  {ticker.bid_ask_spread_percentage && ticker.bid_ask_spread_percentage.toFixed(3)}%
                 </TableCell>
               </TableRow>
             ))}

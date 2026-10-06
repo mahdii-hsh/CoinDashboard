@@ -58,7 +58,7 @@ export function AboutCoin({ coin }: Props) {
             </a>
           </Button>
 
-          <Button asChild variant="outline" size="sm">
+          <Button  variant="outline" size="sm">
             <a
               href={coin.links.whitepaper}
               target="_blank"
@@ -70,7 +70,7 @@ export function AboutCoin({ coin }: Props) {
             </a>
           </Button>
 
-          <Button asChild variant="outline" size="sm">
+          <Button variant="outline" size="sm">
             <a
               href={coin.links.repos_url.github[0]}
               target="_blank"

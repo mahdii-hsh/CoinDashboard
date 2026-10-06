@@ -1,3 +1,5 @@
+"use client";
+
 import { CoinHero } from "./CoinHero";
 import { TCoinDetails } from "@/entities/coin";
 import { MarketOverview } from "./MarketOverview";
@@ -8,8 +10,11 @@ import { AboutCoin } from "./AboutCoin";
 import { SupplyOverview } from "./SupplyOverview";
 import { Community } from "./Community";
 import { MarketTickers } from "./MarketTickers";
+import { useParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { coinDetailsQueryOptions } from "../api/queries";
 
-type Props = {
+type TProps = {
   params: Promise<{
     id: string;
   }>;
@@ -340,35 +345,41 @@ const bitcoinMock: TCoinDetails = {
     },
   ],
 };
-// { params }: Props
-export default async function CoinDetailsPage() {
-  // const { id } = await params;
 
+export default function CoinDetailsPage() {
+  const { id } = useParams();
   // فعلاً برای طراحی:
-  const coin = bitcoinMock as TCoinDetails;
+  // const coin = bitcoinMock as TCoinDetails;
 
+  const { data: coin, isLoading } = useQuery(coinDetailsQueryOptions(id));
   return (
     <main className="min-h-screen bg-slate-50/70">
       <div className="mx-auto max-w-7xl space-y-6 px-4 py-8 md:px-6 lg:py-10">
-        <CoinHero coin={coin} />
+        {isLoading ? (
+          <p>isloading...</p>
+        ) : (
+          <>
+            <CoinHero coin={coin} />
 
-        <MarketOverview coin={coin} />
+            <MarketOverview coin={coin} />
 
-        <PriceChart coin={coin} />
+            <PriceChart coin={coin} />
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <PriceStats coin={coin} />
-          <MarketPerformance coin={coin} />
-        </div>
+            <div className="grid gap-6 lg:grid-cols-2">
+              <PriceStats coin={coin} />
+              <MarketPerformance coin={coin} />
+            </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-          <AboutCoin coin={coin} />
-          <SupplyOverview coin={coin} />
-        </div>
+            <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+              <AboutCoin coin={coin} />
+              <SupplyOverview coin={coin} />
+            </div>
 
-        <Community coin={coin} />
+            <Community coin={coin} />
 
-        <MarketTickers tickers={coin.tickers} />
+            <MarketTickers tickers={coin.tickers} />
+          </>
+        )}
       </div>
     </main>
   );
